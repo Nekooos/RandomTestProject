@@ -1,6 +1,6 @@
 package random;
 
-public class Dictionary {
+public class  Dictionary {
     private DictionaryRepository dictionaryRepository;
 
     public Dictionary() {
