@@ -1,0 +1,8 @@
+message\MessageRepository.class
+message\Message.class
+hibernate\HibernateConfiguration.class
+message\MessageUtil.class
+hibernate\Connection.class
+message\MessageController.class
+user\User.class
+message\MessageService.class
