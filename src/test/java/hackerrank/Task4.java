@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Task4 {
     int n = 3;
     List<Integer> list1 = Arrays.asList(11,2,4);
@@ -26,7 +28,7 @@ public class Task4 {
             val2 = val2 + arr.get(j).get(pos);
             pos=pos-1;
         }
-        Assertions.assertEquals(15, Math.abs(val1-val2));
+        assertEquals(15, Math.abs(val1-val2));
     }
 
 }

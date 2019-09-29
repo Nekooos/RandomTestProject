@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class BasicConcurrencyTest {
     BasicConcurrency basicConcurrency;
 
@@ -17,7 +19,7 @@ public class BasicConcurrencyTest {
     @Test
     public void addNumberTest() throws ExecutionException, InterruptedException, TimeoutException {
         int sum = basicConcurrency.addNumbers(4,6);
-        Assertions.assertEquals(10, sum);
+        assertEquals(10, sum);
     }
 
     @Test
@@ -27,6 +29,6 @@ public class BasicConcurrencyTest {
             System.out.println("Calculating...");
             Thread.sleep(300);
         }
-        Assertions.assertEquals(10, futureSum.get());
+        assertEquals(10, futureSum.get());
     }
 }

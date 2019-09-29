@@ -9,6 +9,8 @@ import org.mockito.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class MockitoPracticeTests {
     @InjectMocks
@@ -33,7 +35,7 @@ class MockitoPracticeTests {
         Mockito.when(mockStringList.get(0)).thenReturn("returnedMock");
         String result = mockStringList.get(0);
         Mockito.verify(mockStringList).get(0);
-        Assertions.assertEquals("returnedMock", result);
+        assertEquals("returnedMock", result);
     }
 
     @Test
@@ -42,20 +44,20 @@ class MockitoPracticeTests {
         spyStringList.add("two");
         Mockito.verify(spyStringList).add("one");
         Mockito.verify(spyStringList).add("two");
-        Assertions.assertEquals(2, spyStringList.size());
+        assertEquals(2, spyStringList.size());
 
         mockStringList.add("one");
         Mockito.verify(mockStringList).add("one");
-        Assertions.assertEquals(0, mockStringList.size());
+        assertEquals(0, mockStringList.size());
     }
 
 
     @Test
     void streamIterateInjectMock() {
        int num = streamIterate.fibonacci(1);
-       Assertions.assertEquals(0, num);
+       assertEquals(0, num);
 
        int num2 = streamIterateMock.fibonacci(1);
-       Assertions.assertEquals(0, num2);
+       assertEquals(0, num2);
     }
 }

@@ -9,6 +9,8 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class StreamTest {
     private List<Integer> values = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
     private Function<Integer, Predicate<Integer>> isGreaterThan = pivot -> number -> number > pivot;
@@ -19,7 +21,7 @@ class StreamTest {
                 .filter(isGreaterThan.apply(5))
                 .findFirst()
                 .orElse(0);
-        Assertions.assertEquals(6, num);
+        assertEquals(6, num);
     }
 
     @Test
@@ -27,14 +29,14 @@ class StreamTest {
         values.stream()
                 .filter(isGreaterThan.apply(5))
                 .findFirst()
-                .ifPresent(num2 -> Assertions.assertEquals(6, num2));
+                .ifPresent(num2 -> assertEquals(6, num2));
     }
 
     @Test
     void predicate() {
         Predicate<Integer> isGreaterThanFive = num -> num > 5;
-        Assertions.assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(6));
-        Assertions.assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(-1));
-        Assertions.assertFalse(isGreaterThanFive.and(integer -> integer < 0).test(-1));
+        assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(6));
+        assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(-1));
+        assertFalse(isGreaterThanFive.and(integer -> integer < 0).test(-1));
     }
 }

@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CompareServiceTest {
 
     private CompareService compareService;
@@ -22,14 +24,14 @@ public class CompareServiceTest {
     @Test
     public void sortByNameAndThenAge() {
         List<User> sortedUserList = compareService.sortUserByNameThenAge(userList);
-        Assertions.assertEquals("Anna", sortedUserList.get(0).getName());
-        Assertions.assertEquals(38, sortedUserList.get(1).getAge());
+        assertEquals("Anna", sortedUserList.get(0).getName());
+        assertEquals(38, sortedUserList.get(1).getAge());
     }
 
     @Test
     public void sortByNameReversed() {
         List<User> sortedUserList = compareService.sortUserByNameReversed(userList);
-        Assertions.assertEquals("Anna", sortedUserList.get(2).getName());
+        assertEquals("Anna", sortedUserList.get(2).getName());
     }
 
     public List<User> addUsersToList() {

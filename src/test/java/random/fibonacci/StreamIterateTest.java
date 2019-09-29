@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class StreamIterateTest {
     private StreamIterate fibonacciService;
 
@@ -17,14 +19,14 @@ public class StreamIterateTest {
     @Test
     public void fibonacciTest() {
         int num = fibonacciService.fibonacci(11);
-        Assertions.assertEquals(55, num);
+        assertEquals(55, num);
         int num2 = fibonacciService.fibonacci(7);
-        Assertions.assertEquals(8, num2);
+        assertEquals(8, num2);
     }
 
     @Test
     public void streamIterateLimitTest() {
         List<Integer> numbers = fibonacciService.streamIterateLimit(5);
-        Assertions.assertEquals(5, numbers.get(numbers.size()-1));
+        assertEquals(5, numbers.get(numbers.size()-1));
     }
 }
