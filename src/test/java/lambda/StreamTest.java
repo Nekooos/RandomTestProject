@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,10 +35,19 @@ class StreamTest {
     }
 
     @Test
-    void predicate() {
+    void predicateTest() {
         Predicate<Integer> isGreaterThanFive = num -> num > 5;
         assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(6));
         assertTrue(isGreaterThanFive.or(integer -> integer < 0).test(-1));
         assertFalse(isGreaterThanFive.and(integer -> integer < 0).test(-1));
+    }
+
+    @Test
+    void collectorTest() {
+        String streamString = List.of(1.3, 1.5, 3.1).stream().map(Object::toString).collect(Collectors.joining(" + "));
+        assertEquals("1.3 + 1.5 + 3.1", streamString);
+
+        double sum = List.of(5, 10, 15).stream().collect(Collectors.averagingInt(Integer::intValue));
+        assertEquals(10.0, sum);
     }
 }

@@ -2,6 +2,11 @@ package regualarexpression;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RegualarExpressionTest {
@@ -48,6 +53,13 @@ public class RegualarExpressionTest {
         String nonDigits = "abcde1";
         assertEquals("XXXXX1", nonDigits.replaceAll("\\D", "X"));
 
+        String alphaNumeric = "abcDeeeee";
+        // replace 4 e
+        assertEquals("Xe", alphaNumeric.replaceAll("^abcDe{4}", "X"));
+        // any number of e
+        assertEquals("X", alphaNumeric.replaceAll("^abcDe+", "X"));
+        assertEquals("X", alphaNumeric.replaceAll("^abcDe*", "X"));
+
         String newLineWhitespaceBlank = "1blanks   \ta tab and a new line \n";
         assertEquals("1blanksXXXXaXtabXandXaXnewXlineXX", newLineWhitespaceBlank.replaceAll("\\s", "X"));
         assertEquals("1blanks   Xa tab and a new line \n", newLineWhitespaceBlank.replaceAll("\\t", "X"));
@@ -58,11 +70,58 @@ public class RegualarExpressionTest {
     }
 
     @Test
+    public void qualifiersAndPatterns() {
+        StringBuilder htmlText = new StringBuilder("<h1>My Heading</h1>");
+        htmlText.append("<h2>Sub-heading</h2>");
+        htmlText.append("<p>Paragraph about somthing</p>");
+        htmlText.append("<p>Paragrath about something else</p>");
+        htmlText.append("<h2>Summary</h2>");
+        htmlText.append("<h2></h2>");
+        htmlText.append("<p>Summary of something</p>");
+
+        // anything before and anything after
+        String h2Pattern = ".*<h2>.*";
+        Pattern pattern = Pattern.compile(h2Pattern, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(htmlText);
+        assertTrue(matcher.matches());
+        //* zero or more + empty
+        String h2Pattern2 = "(<h2>.*?</h2>)";
+        Pattern pattern2 = Pattern.compile(h2Pattern2);
+        Matcher matcher2 = pattern2.matcher(htmlText);
+
+        matcher2.reset();
+        List<String> h2List = new ArrayList<>();
+        while(matcher2.find()) {
+            h2List.add(matcher2.group(1));
+        }
+        assertEquals("<h2>Sub-heading</h2>", h2List.get(0));
+        assertEquals("<h2>Summary</h2>", h2List.get(1));
+        assertEquals("<h2></h2>", h2List.get(2));
+
+        String h2Pattern3 = "(<h2>)(.+?)(</h2>)";
+        Pattern pattern3 = Pattern.compile(h2Pattern3);
+        Matcher matcher3 = pattern3.matcher(htmlText);
+
+        matcher3.reset();
+        List<String> h2List2 = new ArrayList<>();
+        while(matcher3.find()) {
+            h2List2.add(matcher3.group(2));
+        }
+        assertEquals("Sub-heading", h2List2.get(0));
+        assertEquals("Summary", h2List2.get(1));
+    }
+
+    @Test
     public void matchesTest() {
         String alphanumeric = "abcdfghijk";
         assertFalse(alphanumeric.matches("^abcdf"));
         // false since its not the complete String
         assertFalse(alphanumeric.matches("^abcdef"));
         assertTrue(alphanumeric.matches("abcdefghijk"));
+    }
+
+    @Test
+    public void andOrNot() {
+
     }
 }
