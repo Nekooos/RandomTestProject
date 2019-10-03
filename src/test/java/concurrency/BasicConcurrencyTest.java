@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.*;
 
+import static concurrency.ThreadColor.ANSI_GREEN;
+import static concurrency.ThreadColor.ANSI_RESET;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasicConcurrencyTest {
@@ -30,5 +32,20 @@ public class BasicConcurrencyTest {
             Thread.sleep(300);
         }
         assertEquals(10, futureSum.get());
+    }
+
+    @Test
+    public void basicThread() {
+        TestThread testThread = new TestThread();
+        testThread.start();
+
+        new Thread(() -> System.out.println(ANSI_GREEN+"new Thread running")).start();
+
+        Thread runnableThread = new Thread(new TestRunnable());
+        runnableThread.start();
+
+
+
+
     }
 }

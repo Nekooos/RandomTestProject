@@ -4,6 +4,9 @@ import java.util.concurrent.*;
 
 public class BasicConcurrency {
 
+    public void basicThreads() {
+
+    }
 
     public Integer addNumbers(int x, int y) throws ExecutionException, InterruptedException, TimeoutException {
         Callable<Integer> callableObj = () -> x+y;

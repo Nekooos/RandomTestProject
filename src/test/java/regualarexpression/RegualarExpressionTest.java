@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RegualarExpressionTest {
     @Test
-    public void replaceAllTest() {
+    public void replaceWordTest() {
         String string = "This car is red";
         String replaceAllString = string.replaceAll("red", "yellow");
         assertEquals("This car is yellow", replaceAllString);
