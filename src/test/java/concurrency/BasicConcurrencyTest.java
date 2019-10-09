@@ -1,13 +1,12 @@
 package concurrency;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeoutException;
 
-import static concurrency.ThreadColor.ANSI_GREEN;
-import static concurrency.ThreadColor.ANSI_RESET;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasicConcurrencyTest {
@@ -39,13 +38,9 @@ public class BasicConcurrencyTest {
         TestThread testThread = new TestThread();
         testThread.start();
 
-        new Thread(() -> System.out.println(ANSI_GREEN+"new Thread running")).start();
+        new Thread(() -> System.out.println(Colors.GREEN+"new Thread running")).start();
 
         Thread runnableThread = new Thread(new TestRunnable());
         runnableThread.start();
-
-
-
-
     }
 }

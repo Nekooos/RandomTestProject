@@ -3,6 +3,9 @@ package concurrency;
 import java.util.concurrent.*;
 
 public class BasicConcurrency {
+    public void getColor() {
+
+    }
 
     public void basicThreads() {
 
