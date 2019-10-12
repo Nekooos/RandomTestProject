@@ -59,3 +59,5 @@ e
 5src/main/java/lambda/lambdaCalculator/Calculator.java,e\4\e41887d4aa64f298911f46b073188730853568f7
 l
 <src/main/java/lambda/lambdaCalculator/CalculatorService.java,1\9\195583b0bb6173c789a67642ffcded1d3ccc4169
+O
+src/main/java/models/Group.java,1\1\112f319a54f69e89e348dd4b190314f6408445ca
