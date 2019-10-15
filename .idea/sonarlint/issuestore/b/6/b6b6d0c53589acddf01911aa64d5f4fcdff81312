@@ -1,8 +1,8 @@
 
-´%squid:RedundantThrowsDeclarationCheck"~Remove the declaration of thrown exception 'java.util.concurrent.TimeoutException', as it cannot be thrown from method's body.(Ó¢Çƒøÿÿÿÿ
-¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷›šõþÿÿÿÿ8ÚºŠ¯Ù-
-¯%squid:RedundantThrowsDeclarationCheck"~Remove the declaration of thrown exception 'java.util.concurrent.TimeoutException', as it cannot be thrown from method's body.(¦ë‚¬
 ¤squid:S1186
 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¿©†½ûÿÿÿÿ8ÕüµŠÙ-
 ¨%squid:RedundantThrowsDeclarationCheck"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¦ë‚¬
+¯%squid:RedundantThrowsDeclarationCheck"~Remove the declaration of thrown exception 'java.util.concurrent.TimeoutException', as it cannot be thrown from method's body.(¦ë‚¬
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷›šõþÿÿÿÿ8ÚºŠ¯Ù-
 ²%squid:RedundantThrowsDeclarationCheck"€Remove the declaration of thrown exception 'java.util.concurrent.ExecutionException', as it cannot be thrown from method's body.(¦ë‚¬
+´%squid:RedundantThrowsDeclarationCheck"~Remove the declaration of thrown exception 'java.util.concurrent.TimeoutException', as it cannot be thrown from method's body.(Ó¢Çƒøÿÿÿÿ

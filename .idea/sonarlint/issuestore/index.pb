@@ -61,3 +61,5 @@ l
 <src/main/java/lambda/lambdaCalculator/CalculatorService.java,1\9\195583b0bb6173c789a67642ffcded1d3ccc4169
 O
 src/main/java/models/Group.java,1\1\112f319a54f69e89e348dd4b190314f6408445ca
+Z
+*src/test/java/lambda/CustomLambdaTest.java,d\9\d90bcb8eab32e9fc062c7d7e5659b44d4a2fc377
