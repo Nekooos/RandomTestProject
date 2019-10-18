@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: lambda.LambdaTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec <<< FAILURE!
+lambda.LambdaTest.testingPredicate()  Time elapsed: 0.019 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at lambda.LambdaClass.usersSortedByAge(LambdaTest.java:104)
+	at lambda.LambdaTest.testingPredicate(LambdaTest.java:32)
+
+lambda.LambdaTest.testingFunction()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at lambda.LambdaTest.testingFunction(LambdaTest.java:44)
+
