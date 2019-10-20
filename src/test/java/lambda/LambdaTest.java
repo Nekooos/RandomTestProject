@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LambdaTest {
-    List<User> userList;
+    private List<User> userList;
     @BeforeEach
     public void init() {
         User anna = new User("Anna Annasson", 20);
@@ -27,7 +27,7 @@ public class LambdaTest {
     @Test
     public void testingPredicate() {
         LambdaClass lambdaClass = new LambdaClass();
-        assertEquals("SS",lambdaClass.doSomething("s", "s"));
+        assertEquals("SS",lambdaClass.upperCase("s", "s"));
         List<User> expectedUserList = Arrays.asList( new User("Sara", 29), new User("Sara", 29), new User("Egon", 33));
         assertEquals(expectedUserList.get(0).getAge(), lambdaClass.usersSortedByAge(userList, user -> user.getAge() > 25).get(0).getAge());
         IntPredicate greaterThan = age -> age > 28;
@@ -91,7 +91,7 @@ interface UpperConcat {
 }
 
 class LambdaClass {
-    public String doSomething(String st1, String st2) {
+    public String upperCase(String st1, String st2) {
         UpperConcat upperConcat = (s1, s2) -> {
             String result = s1.toUpperCase() + s2.toUpperCase();
             return result;

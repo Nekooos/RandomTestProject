@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -49,5 +50,29 @@ class StreamTest {
 
         double sum = List.of(5, 10, 15).stream().collect(Collectors.averagingInt(Integer::intValue));
         assertEquals(10.0, sum);
+    }
+
+    @Test
+    void buildStringFromArray() {
+        String[] words = new String[]{"This", "will", "be", "a", "single", "String"};
+        String result = Arrays.stream(words)
+                .collect(Collectors.joining(" "));
+        assertEquals("This will be a single String", result);
+    }
+
+    @Test
+    void buildStringFromArrayDelimeterPrefixSuffix() {
+        String[] words = new String[]{"This", "will", "be", "a", "single", "String"};
+        String result = Arrays.stream(words)
+                .collect(Collectors.joining(" ", "Hello! ", "!"));
+        assertEquals("Hello! This will be a single String!", result);
+    }
+
+    @Test
+    void partitioningBy() {
+        List<Integer> numbers = Arrays.asList(3,6,7);
+        Map<Boolean, List<Integer>> wordsEvenLength = numbers.stream()
+                .collect(Collectors.partitioningBy(num -> num > 5));
+        assertTrue(wordsEvenLength.get(true).contains(6));
     }
 }

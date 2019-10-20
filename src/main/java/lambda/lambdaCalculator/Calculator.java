@@ -1,5 +1,7 @@
 package lambda.lambdaCalculator;
 
+import java.util.List;
+
 @FunctionalInterface
 public interface Calculator {
     double applyNum(double x);
