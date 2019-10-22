@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CustomClaculatorTets {
     @Test
     public void calculatorLambdaTest() {
-       
-        //Calculator calculator;
         double sum = Calculator.plus(5).applyNum(4);
         assertEquals(9, sum);
 

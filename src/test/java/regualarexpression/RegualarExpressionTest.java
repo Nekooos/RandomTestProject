@@ -1,5 +1,6 @@
 package regualarexpression;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,56 +11,113 @@ import java.util.regex.Pattern;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RegualarExpressionTest {
+    private String alphanumeric;
+    private StringBuilder htmlText;
+    String numbers;
+
+    @BeforeAll
+    public void setupBeforeAll() {
+        alphanumeric = "abcdefghijk";
+        numbers = "12345a";
+
+        htmlText = new StringBuilder("<h1>My Heading</h1>");
+        htmlText.append("<h2>Sub-heading</h2>");
+        htmlText.append("<p>Paragraph about somthing</p>");
+        htmlText.append("<p>Paragrath about something else</p>");
+        htmlText.append("<h2>Summary</h2>");
+        htmlText.append("<h2></h2>");
+        htmlText.append("<p>Summary of something</p>");
+    }
+
     @Test
-    public void replaceWordTest() {
+    public void replaceWordredWithYellow() {
         String string = "This car is red";
         String replaceAllString = string.replaceAll("red", "yellow");
         assertEquals("This car is yellow", replaceAllString);
+    }
 
+    @Test
+    public void replaceAllWithX() {
         String alphanumeric = "abcdefghijk";
         assertEquals("XXXXXXXXXXX", alphanumeric.replaceAll(".", "X"));
         assertEquals("ABCdefghijk", alphanumeric.replaceAll("^abc", "ABC"));
+    }
 
+    @Test
+    public void replaceStartAbcWithUppercase() {
         String secondAlphanumeric = "abcdefghijkabc";
         // ^start
         assertEquals("ABCdefghijkabc", secondAlphanumeric.replaceAll("^abc", "ABC"));
+    }
+
+    @Test
+    public void replaceLast() {
         // end$
         String end = alphanumeric.replaceAll("jk$", "Replaced here");
         assertEquals("abcdefghiReplaced here", end);
+    }
+
+    @Test
+    public void replaceACEwithX() {
         // [ace] replace aei with X
         assertEquals("XbXdXfghijk", alphanumeric.replaceAll("[ace]", "X"));
+    }
+
+    @Test
+    public void replaceACEifDorDB() {
         // [ace][df] replace if char followed by d or f
         String newAlphaNumeric = "abcdefghijk";
         assertEquals("abXefghijk", newAlphaNumeric.replaceAll("[ace][d]", "X"));
         assertEquals("XXefghijk", newAlphaNumeric.replaceAll("[ace][db]", "X"));
+    }
 
-        String name = "Anna";
+    @Test
+    public void replacePartIf() {
+        String name = "anna";
+        // small a with A
         assertEquals("Anna", name.replaceAll("[Aa]nna", "Anna"));
         assertEquals("Anna", name.replaceAll("[BbAa]nna", "Anna"));
+        // replace Aa with i
         assertEquals("inna", name.replaceAll("[iAa]nna", "inna"));
         // Replace all except Aa with b
-        assertEquals("Abba", name.replaceAll("[^Aa]", "b"));
+        assertEquals("abba", name.replaceAll("[^Aa]", "b"));
+    }
 
+    @Test
+    public void replacePartIf2() {
         String thirdAlphaNumeric = "aBcdef12345";
+        // a-c 1-3 with X
         assertEquals("XBXdefXXX45", thirdAlphaNumeric.replaceAll("[a-c1-3]", "X"));
+        // a-c A-Z 1-3 with X
         assertEquals("XXXdefXXX45", thirdAlphaNumeric.replaceAll("[a-cA-Z1-3]", "X"));
-        // ?i ignore case sensitivity
+        // ?i ignore case sensitivity replace a-z 1-3 with X
         assertEquals("XXXXXXXXX45", thirdAlphaNumeric.replaceAll("(?i)[a-z1-3]", "X"));
+    }
 
+    @Test
+    public void replaceAllNumbers() {
         //replace all numbers
-        String numbers = "12345a";
         assertEquals("XXXXXa", numbers.replaceAll("\\d", "X"));
+    }
+
+    @Test
+    public void replaceAllNonDigits() {
         //replace all non digits
         String nonDigits = "abcde1";
         assertEquals("XXXXX1", nonDigits.replaceAll("\\D", "X"));
+    }
 
+    @Test
+    public void replaceE() {
         String alphaNumeric = "abcDeeeee";
-        // replace 4 e
+        // replace abcDe and 4 e
         assertEquals("Xe", alphaNumeric.replaceAll("^abcDe{4}", "X"));
-        // any number of e
+        // replace any number of e
         assertEquals("X", alphaNumeric.replaceAll("^abcDe+", "X"));
         assertEquals("X", alphaNumeric.replaceAll("^abcDe*", "X"));
+    }
 
+    public void newLineWhitespaceBlank() {
         String newLineWhitespaceBlank = "1blanks   \ta tab and a new line \n";
         assertEquals("1blanksXXXXaXtabXandXaXnewXlineXX", newLineWhitespaceBlank.replaceAll("\\s", "X"));
         assertEquals("1blanks   Xa tab and a new line \n", newLineWhitespaceBlank.replaceAll("\\t", "X"));
@@ -71,14 +129,6 @@ public class RegualarExpressionTest {
 
     @Test
     public void qualifiersAndPatterns() {
-        StringBuilder htmlText = new StringBuilder("<h1>My Heading</h1>");
-        htmlText.append("<h2>Sub-heading</h2>");
-        htmlText.append("<p>Paragraph about somthing</p>");
-        htmlText.append("<p>Paragrath about something else</p>");
-        htmlText.append("<h2>Summary</h2>");
-        htmlText.append("<h2></h2>");
-        htmlText.append("<p>Summary of something</p>");
-
         // anything before and anything after
         String h2Pattern = ".*<h2>.*";
         Pattern pattern = Pattern.compile(h2Pattern, Pattern.CASE_INSENSITIVE);

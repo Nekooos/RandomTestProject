@@ -1,4 +1,4 @@
-package random;
+package random.dictionary;
 
 public class  Dictionary {
     private DictionaryRepository dictionaryRepository;

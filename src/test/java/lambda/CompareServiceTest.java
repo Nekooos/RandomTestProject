@@ -40,5 +40,4 @@ public class CompareServiceTest {
         var user3 = new User("Leif", 38);
         return Arrays.asList(user1, user2, user3);
     }
-
 }

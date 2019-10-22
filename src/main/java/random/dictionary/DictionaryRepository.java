@@ -1,4 +1,4 @@
-package random;
+package random.dictionary;
 
 import java.util.Map;
 

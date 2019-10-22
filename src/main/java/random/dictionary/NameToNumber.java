@@ -1,4 +1,4 @@
-package random;
+package random.dictionary;
 
 public class NameToNumber {
     private char[] alphabet = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray();
