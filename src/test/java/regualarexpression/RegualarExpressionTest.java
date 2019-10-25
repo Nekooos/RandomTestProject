@@ -11,14 +11,16 @@ import java.util.regex.Pattern;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RegualarExpressionTest {
-    private String alphanumeric;
-    private StringBuilder htmlText;
-    String numbers;
+    private static String alphanumeric;
+    private static StringBuilder htmlText;
+    private static String numbers;
+    private static String newLineWhitespaceBlank;
 
     @BeforeAll
-    public void setupBeforeAll() {
+    public static void setupBeforeAll() {
         alphanumeric = "abcdefghijk";
         numbers = "12345a";
+        newLineWhitespaceBlank = "1blanks   \ta tab and a new line \n";
 
         htmlText = new StringBuilder("<h1>My Heading</h1>");
         htmlText.append("<h2>Sub-heading</h2>");
@@ -118,8 +120,10 @@ public class RegualarExpressionTest {
     }
 
     public void newLineWhitespaceBlank() {
-        String newLineWhitespaceBlank = "1blanks   \ta tab and a new line \n";
+        //"1blanks   \ta tab and a new line \n"
+        //space with X
         assertEquals("1blanksXXXXaXtabXandXaXnewXlineXX", newLineWhitespaceBlank.replaceAll("\\s", "X"));
+        //\t with X
         assertEquals("1blanks   Xa tab and a new line \n", newLineWhitespaceBlank.replaceAll("\\t", "X"));
         assertEquals("XXXXXXX   \tX XXX XXX X XXX XXXX \n", newLineWhitespaceBlank.replaceAll("\\S", "X"));
         assertEquals("1blanksXXXXaXtabXandXaXnewXlineXX", newLineWhitespaceBlank.replaceAll("\\W", "X"));
