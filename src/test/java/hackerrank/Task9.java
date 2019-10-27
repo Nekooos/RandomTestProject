@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 public class Task9 {
     //https://www.hackerrank.com/challenges/time-conversion/problem
+    //Todo remake with substring
     @Test
     public void task9() {
         String time = "12:45:54PM";

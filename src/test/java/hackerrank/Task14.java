@@ -5,17 +5,30 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-//https://www.hackerrank.com/challenges/between-two-sets/problem
+//www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 public class Task14 {
     @Test
     public void task14() {
-        List<Integer> a = Arrays.asList(2,4);
-        List<Integer> b = Arrays.asList(16,32,96);
-        System.out.println(getTotalX(a, b));
+        int[] scores = {12,24,10,24};
+        Arrays.stream(breakingRecords(scores)).forEach(s -> System.out.println(s));
     }
 
-    private int getTotalX(List<Integer> a, List<Integer> b) {
-
-        return 0;
+    private int[] breakingRecords(int[] scores) {
+        int record = 0;
+        int lowest = 0;
+        int max = scores[0];
+        int min = scores[0];
+        for(int i=0; i<scores.length; i++) {
+            if(scores[i] > max) {
+                max = scores[i];
+                record++;
+            }
+            if(scores[i] < min) {
+                min = scores[i];
+                lowest++;
+            }
+        }
+        int[] result = {record, lowest};
+        return result;
     }
 }

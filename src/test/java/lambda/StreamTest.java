@@ -3,10 +3,7 @@ package lambda;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -74,5 +71,26 @@ class StreamTest {
         Map<Boolean, List<Integer>> wordsEvenLength = numbers.stream()
                 .collect(Collectors.partitioningBy(num -> num > 5));
         assertTrue(wordsEvenLength.get(true).contains(6));
+    }
+
+    @Test
+    void skip() {
+        List<Integer> numbers = Arrays.asList(3,6,7);
+        numbers = numbers.stream()
+                .skip(1)
+                .collect(Collectors.toList());
+        assertEquals(6, numbers.get(0));
+    }
+
+    @Test
+    void subListTest() {
+        List<Integer> nums = Arrays.asList(1,2,3,4);
+        List<Integer> nums2 = new ArrayList<>();
+        List<Integer> expectedNums2 = Arrays.asList(10,9,7,4);
+        for(int i=0; i<nums.size(); i++) {
+            int num = nums.subList(i, nums.size()).stream().mapToInt(s->s).sum();
+            nums2.add(num);
+        }
+        assertEquals(expectedNums2, nums2);
     }
 }

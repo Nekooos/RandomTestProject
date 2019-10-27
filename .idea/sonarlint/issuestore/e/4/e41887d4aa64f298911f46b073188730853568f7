@@ -1,8 +1,8 @@
 
 Ksquid:S1611"/Remove the parentheses around the "x" parameter(¨¾ûçüÿÿÿÿ
-Esquid:S1611"/Remove the parentheses around the "x" parameter(ˆİ¨D
 Tsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+Esquid:S1611"/Remove the parentheses around the "x" parameter(ˆİ¨D
+Fsquid:S1611"/Remove the parentheses around the "x" parameter(³ı
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†î©
 Ksquid:S1611
 "/Remove the parentheses around the "x" parameter(Øƒóüÿÿÿÿ
-rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†î©
-Fsquid:S1611"/Remove the parentheses around the "x" parameter(³ı
