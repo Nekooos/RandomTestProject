@@ -73,3 +73,11 @@ T
 $src/test/java/hackerrank/Task13.java,0\a\0a46a87c49f11efb636351a79507e1ca0a474022
 T
 $src/test/java/hackerrank/Task14.java,e\0\e06474cd099d14019e365720561d661b4e6157c6
+T
+$src/test/java/hackerrank/Task16.java,7\4\746bcc251e97ce95775f4ce3f17e82a924cd17f2
+T
+$src/test/java/hackerrank/Task18.java,8\0\805183621a135f90e914f12e781facc4230e3269
+T
+$src/test/java/hackerrank/Task17.java,9\1\91f4b81ba291900bee0ff1ccbc56a990648f5e79
+T
+$src/test/java/lambda/StreamTest.java,8\9\898196a903bfe9a6859fd91386db1b4776f24d4a

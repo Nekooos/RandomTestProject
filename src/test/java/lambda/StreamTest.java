@@ -7,6 +7,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -92,5 +93,16 @@ class StreamTest {
             nums2.add(num);
         }
         assertEquals(expectedNums2, nums2);
+    }
+
+    @Test
+    void mapStream() {
+        List<Integer> nums = Arrays.asList(1,2,3,4,5);
+
+        /*Map<Integer, Long> numsMap = nums.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
+                .collect(Collectors.toMap(Function.identity(), num -> num));*/
     }
 }
