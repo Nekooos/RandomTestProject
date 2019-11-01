@@ -12,8 +12,15 @@ public class Task8 {
     public void task8() {
         //https://www.hackerrank.com/challenges/birthday-cake-candles/problem
         int[] ar = {3,2,1,3};
-        int highestCandle = Arrays.stream(ar).max().getAsInt();
-        int[] remainingCandles = Arrays.stream(ar).filter(height -> height == highestCandle).peek(num -> System.out.println(num)).toArray();
+        int highestCandle = Arrays.stream(ar)
+                .max()
+                .getAsInt();
+
+        int[] remainingCandles = Arrays.stream(ar).
+                filter(height -> height == highestCandle)
+                .peek(num -> System.out.println(num))
+                .toArray();
+
         int blownOutCandles = remainingCandles.length;
     }
 }

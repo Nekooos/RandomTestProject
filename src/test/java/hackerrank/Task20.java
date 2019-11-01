@@ -1,6 +1,11 @@
 package hackerrank;
 
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class Task20 {
     //https://www.hackerrank.com/challenges/sock-merchant/problem
@@ -14,7 +19,18 @@ public class Task20 {
 
     private int sockMerchant(int n, int[] ar) {
         int pairs = 0;
-
-        return 0;
+        int[] noDuplicate = Arrays.stream(ar)
+                .distinct()
+                .toArray();
+        for (int value : noDuplicate) {
+            int count = 0;
+            for (int value2 : ar) {
+                if (value == value2) {
+                    count++;
+                }
+            }
+            pairs = pairs + count / 2;
+        }
+        return pairs;
     }
 }
