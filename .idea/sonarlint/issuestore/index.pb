@@ -81,3 +81,23 @@ T
 $src/test/java/hackerrank/Task17.java,9\1\91f4b81ba291900bee0ff1ccbc56a990648f5e79
 T
 $src/test/java/lambda/StreamTest.java,8\9\898196a903bfe9a6859fd91386db1b4776f24d4a
+P
+ src/main/java/math/JavaMath.java,4\b\4bfb40f022083c983660e8adec5639383f9f1364
+P
+ src/test/java/math/MathTest.java,d\3\d3da97aae47c785fb0efcd21162e868a32669a87
+T
+$src/test/java/hackerrank/Task21.java,8\1\81477fb70ffc5fcae1fd7ef3e645883acac2e9d3
+T
+$src/test/java/hackerrank/Task20.java,0\0\0093b6116275da1c23e21c3cf4e3f3d31cd32cf8
+T
+$src/test/java/hackerrank/Task19.java,9\7\977d27860ab34afdd13341caaef93db55c283b45
+T
+$src/test/java/hackerrank/Task23.java,c\8\c8d8abffcbe69ca505c2f32970fa9b24729e2bb7
+T
+$src/test/java/hackerrank/Task22.java,9\0\90042ac0480c6a11aefadaebcba929e1d15342f8
+T
+$src/test/java/hackerrank/Task24.java,b\b\bb682863ce08b9567d6e879ef540f0b02b6e1375
+T
+$src/test/java/hackerrank/Task26.java,b\5\b5d60e26fa6450e3406d2188176d1fa37e35403e
+T
+$src/test/java/hackerrank/Task25.java,b\2\b28c81c2ca34cea2d30916a28378ff7113d44f65

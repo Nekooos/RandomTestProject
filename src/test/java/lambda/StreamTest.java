@@ -105,4 +105,18 @@ class StreamTest {
                 .sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
                 .collect(Collectors.toMap(Function.identity(), num -> num));*/
     }
+
+    @Test
+    void concatArray() {
+        int[] nums1 = {5,7,8};
+        int[] nums2 = {3,4,5};
+        int[] joinedArray = IntStream
+                .concat(Arrays.stream(nums1), Arrays.stream(nums2))
+                .boxed()
+                .sorted(Comparator.reverseOrder())
+                .mapToInt(s->s)
+                .toArray();
+        int[] expectedArray = {8,7,5,5,4,3};
+        assertArrayEquals(expectedArray, joinedArray);
+    }
 }
