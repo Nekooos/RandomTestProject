@@ -46,7 +46,7 @@ public class Task26 {
         return alice;
     }
 
-    //to slow to pass 1 test case
+    //to slow to pass, 1 test case fail
     private int[] climbingLeaderboard4(int[] scores, int[] alice) {
         int[] sortedScore = IntStream.of(scores)
                 .distinct()
@@ -68,7 +68,7 @@ public class Task26 {
         return alice;
     }
 
-    // to slow to pass 3 test cases
+    // to slow to pass, 3 test cases fail
     private int[] climbingLeaderboard3(int[] scores, int[] alice) {
         List<Integer> aliceScorePosition = new ArrayList<>();
         int[] sortedScore = IntStream.of(scores)
@@ -91,7 +91,7 @@ public class Task26 {
         return aliceScorePosition.stream().mapToInt(s->s).toArray();
     }
 
-    // to slow to pass 4 test case
+    // to slow to pass, 4 test case fail
     private int[] climbingLeaderboard2(int[] scores, int[] alice) {
         List<Integer> aliceScorePosition = new ArrayList<>();
         List<Integer> scoresList = Arrays.stream(scores)
