@@ -9,7 +9,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Task12 {
-    //https://www.hackerrank.com/challenges/apple-and-orange/problem
     //1 1
     @Test
     public void task12() {

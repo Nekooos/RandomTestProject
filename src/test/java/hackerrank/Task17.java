@@ -8,7 +8,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Task17 {
-    //https://www.hackerrank.com/challenges/migratory-birds/problem
     @Test
     public void task17() {
         List<Integer> birdSightings = Arrays.asList(1,2,3,4,5,4,3,2,1,3,4);

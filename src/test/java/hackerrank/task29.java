@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.stream.IntStream;
 
 public class task29 {
-    //https://www.hackerrank.com/challenges/utopian-tree/problem
     @Test
     public void task29() {
         System.out.println(utopianTree(4));

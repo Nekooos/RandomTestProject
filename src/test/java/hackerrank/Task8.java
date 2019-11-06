@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 public class Task8 {
     @Test
     public void task8() {
-        //https://www.hackerrank.com/challenges/birthday-cake-candles/problem
         int[] ar = {3,2,1,3};
         int highestCandle = Arrays.stream(ar)
                 .max()

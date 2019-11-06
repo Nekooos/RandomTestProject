@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Task19 {
-    //https://www.hackerrank.com/challenges/bon-appetit/problem
     @Test
     public void task19() {
         List<Integer> bill1 = new ArrayList<>(Arrays.asList(3,10,2,9));

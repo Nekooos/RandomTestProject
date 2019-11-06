@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-//www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
 public class Task14 {
     @Test
     public void task14() {

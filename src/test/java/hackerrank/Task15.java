@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Task15 {
-    //https://www.hackerrank.com/challenges/the-birthday-bar/problem
     @Test
     public void task15() {
         List<Integer> squares = Arrays.asList(1, 2, 1, 3, 2);

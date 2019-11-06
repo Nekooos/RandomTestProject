@@ -3,7 +3,6 @@ package hackerrank;
 import org.junit.jupiter.api.Test;
 
 public class Task18 {
-    //https://www.hackerrank.com/challenges/day-of-the-programmer/problem
     @Test
     public void task18() {
         System.out.println(dayOfProgrammer(2016)); // 12.09.2016

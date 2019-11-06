@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 public class Task21 {
-    //https://www.hackerrank.com/challenges/drawing-book/problem
     @Test
     public void task21() {
         System.out.println(pageCount(6,2)); // 1

@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Task16 {
-    //https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
     @Test
     public void task16() {
         int[] ar = {1,3,2,6,1,2};

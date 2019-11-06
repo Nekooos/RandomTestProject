@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Task10 {
-    //https://www.hackerrank.com/challenges/magic-square-forming/problem
     @Test
     public void magicSquare() {
         int[][] s = {

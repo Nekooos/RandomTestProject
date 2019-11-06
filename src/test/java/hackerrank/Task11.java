@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Task11 {
-    //https://www.hackerrank.com/challenges/grading/problem
     //75, 67, 40, 33
     @Test
     public void task11() {
