@@ -1,5 +1,6 @@
 package lambda;
 
+import models.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -96,17 +97,6 @@ class StreamTest {
     }
 
     @Test
-    void mapStream() {
-        List<Integer> nums = Arrays.asList(1,2,3,4,5);
-
-        /*Map<Integer, Long> numsMap = nums.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
-                .collect(Collectors.toMap(Function.identity(), num -> num));*/
-    }
-
-    @Test
     void concatArray() {
         int[] nums1 = {5,7,8};
         int[] nums2 = {3,4,5};
@@ -118,5 +108,86 @@ class StreamTest {
                 .toArray();
         int[] expectedArray = {8,7,5,5,4,3};
         assertArrayEquals(expectedArray, joinedArray);
+    }
+
+    @Test
+    void mapStringFormatTest() {
+        List<User> users = Arrays.asList(new User("Ulf", 44), new User("Malin", 32));
+        List<String> messages = users.stream()
+                .map(User::message)
+                .collect(Collectors.toList());
+        messages.forEach(System.out::println);
+    }
+
+    @Test
+    void returnMapAndCountNames() {
+        List<User> users = Arrays.asList(new User("Ulf", 22), new User("Ulf", 44), new User("Malin", 32));
+        countNames(users).forEach((v, k) -> System.out.println("name "+ " " + v + " occurs " +k+ " times"));
+    }
+
+    private Map<String, Long> countNames(List<User> users) {
+        return users.stream()
+                .map(User::getName)
+                .flatMap(Stream::of)
+                .filter(name->name.length()>0)
+                .map(String::toLowerCase)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+    }
+    @Test
+    void findLongestName() {
+        List<User> users = Arrays.asList(new User("Ulf", 22), new User("Ulf", 44), new User("Malin", 32));
+        String longestName = users.stream()
+                .map(User::getName)
+                .max(Comparator.comparingInt(String::length))
+                .get();
+        Assertions.assertEquals("Malin", longestName);
+    }
+
+    @Test
+    void findNamesThatStartsWithU() {
+        List<User> users = Arrays.asList(new User("Ulf", 22), new User("Urban", 44), new User("Malin", 32));
+        Optional<User> foundUser = searchUser(users, "M");
+        foundUser.ifPresent(user -> System.out.println(user.getName()));
+        if (foundUser.isPresent()) {
+            System.out.println("first name found");
+        } else {
+            System.out.println("not found");
+        }
+        Assertions.assertEquals("Malin", foundUser.get().getName());
+    }
+
+    private Optional<User> searchUser(List<User> users, String searchTerm) {
+        return users.stream()
+                .filter(user -> user.getName().contains(searchTerm))
+                .findFirst();
+                // or else
+                // orElseThrow
+    }
+
+    @Test
+    void rangeAndClosedRange() {
+        List<User> users = Arrays.asList(new User("Ulf", 22), new User("Urban", 44), new User("Malin", 32));
+        List<User> usersResult = IntStream.range(1, 3)
+                .mapToObj(i -> users.get(i-1))
+                .collect(Collectors.toList());
+        assertEquals(2, usersResult.size());
+
+        List<User> usersResult2 = IntStream.rangeClosed(1, 3)
+                .mapToObj(i -> users.get(i-1))
+                .collect(Collectors.toList());
+        assertEquals(3, usersResult2.size());
+    }
+
+    @Test
+    void iterateStream() {
+        List<User> users = Arrays.asList(new User("Ulf", 22), new User("Urban", 44), new User("Malin", 32));
+        List<User> usersResult = IntStream.iterate(0, i -> i++)
+                .mapToObj(users::get)
+                .limit(2)
+                .collect(Collectors.toList());
+        assertEquals(2, usersResult.size());
     }
 }

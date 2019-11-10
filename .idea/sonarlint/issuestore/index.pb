@@ -119,3 +119,11 @@ T
 $src/test/java/hackerrank/Task34.java,7\0\70031e777a51ef457fb4345e6ff297d8b8c41714
 T
 $src/test/java/hackerrank/Task35.java,f\0\f08383cc6c1824c3261716167f54d7274965fa9e
+T
+$src/test/java/hackerrank/Task36.java,3\7\37d266a0cd8532bf8eaca033f111628d9ccbb093
+T
+$src/test/java/hackerrank/Task37.java,b\5\b5b6c9d6e9714e3dfc2777dc711943fc127ed2a5
+T
+$src/test/java/hackerrank/Task39.java,9\c\9cfaf189c92acda58fafcc109c8b39eb5290e788
+T
+$src/test/java/hackerrank/Task38.java,7\0\706d00fff01ea78e0d930d778213f72f95d628c3
