@@ -127,3 +127,9 @@ T
 $src/test/java/hackerrank/Task39.java,9\c\9cfaf189c92acda58fafcc109c8b39eb5290e788
 T
 $src/test/java/hackerrank/Task38.java,7\0\706d00fff01ea78e0d930d778213f72f95d628c3
+T
+$src/test/java/lambda/LambdaTest.java,7\b\7bb7f36671a24de0adcd6acac57f096c73d8472d
+T
+$src/test/java/hackerrank/Task40.java,f\3\f3bcab65ef9a64cbc2eecfcbb813e96f4e2b2e50
+T
+$src/test/java/hackerrank/Task41.java,4\e\4ee88e930fdbb63cc025237bfc8585002b733031

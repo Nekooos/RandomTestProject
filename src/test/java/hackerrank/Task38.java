@@ -1,12 +1,6 @@
 package hackerrank;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
-import java.util.function.Function;
-import java.util.function.Predicate;
-
 public class Task38 {
     // https://www.hackerrank.com/challenges/append-and-delete/problem
     @Test
@@ -18,7 +12,7 @@ public class Task38 {
     }
     // number of operations to get same string > k ? yes : no
     private String appendAndDelete(String s, String t, int k) {
-        char[] first = s.toCharArray();
+        char[]  first = s.toCharArray();
         char[] second = t.toCharArray();
 
         if (k > (s.length()+t.length())) {

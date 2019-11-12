@@ -59,6 +59,20 @@ public class LambdaTest {
     }
 
     @Test
+    public void functionReturnsPredicate() {
+        Function<String, Predicate<String>> functionReturnPredicate = name -> name2 -> name.length() > name2.length();
+        boolean AnnaLongerThanArnold = functionReturnPredicate.apply("Anna").test("Arnold");
+        assertEquals(false, AnnaLongerThanArnold);
+    }
+
+    @Test
+    public void functionReturnsFunction() {
+        Function<String, Function<String, String>> functionReturnPredicate = name -> name2 -> name.length() > name2.length() ? name : name2;
+        String longestName = functionReturnPredicate.apply("Anna").apply("Arnold");
+        assertEquals("Arnold", longestName);
+    }
+
+    @Test
     public void testConsumer() {
         Consumer<String> toLowerCase = String::toLowerCase;
         Consumer<String> firstLetterUpperCase = string -> string.toUpperCase().charAt(0);
