@@ -23,10 +23,4 @@ public class StreamIterateTest {
         int num2 = fibonacciService.fibonacci(7);
         assertEquals(8, num2);
     }
-
-    @Test
-    public void streamIterateLimitTest() {
-        List<Integer> numbers = fibonacciService.streamIterateLimit(5);
-        assertEquals(5, numbers.get(numbers.size()-1));
-    }
 }

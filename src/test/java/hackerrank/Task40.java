@@ -28,7 +28,7 @@ public class Task40 {
         return sticksCutCount.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    private List<Integer> cutSticks(List<Integer> sticks, int shortestStick) {
+    private List<Integer> cutSticks(List<Integer> sticks, final int shortestStick) {
         return sticks.stream()
                 .map(stick -> stick-shortestStick)
                 .filter(stick -> stick != shortestStick)

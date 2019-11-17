@@ -12,7 +12,7 @@ public class Task38 {
     }
     // number of operations to get same string > k ? yes : no
     private String appendAndDelete(String s, String t, int k) {
-        char[]  first = s.toCharArray();
+        char[] first = s.toCharArray();
         char[] second = t.toCharArray();
 
         if (k > (s.length()+t.length())) {
