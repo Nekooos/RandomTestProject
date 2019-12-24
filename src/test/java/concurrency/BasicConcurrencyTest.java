@@ -38,7 +38,7 @@ public class BasicConcurrencyTest {
         TestThread testThread = new TestThread();
         testThread.start();
 
-        new Thread(() -> System.out.println(Colors.GREEN+"new Thread running")).start();
+        new Thread(() -> System.out.println(Colors.RED.getColor() +"new Thread running")).start();
 
         Thread runnableThread = new Thread(new TestRunnable());
         runnableThread.start();

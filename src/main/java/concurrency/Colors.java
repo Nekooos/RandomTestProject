@@ -7,7 +7,13 @@ public enum Colors {
     CYAN("\u001B[36m"),
     PURPLE("\u001B[35");
 
+    private final String color;
+
     Colors(String color) {
+        this.color = color;
     }
 
+    public String getColor() {
+        return this.color;
+    }
 }

@@ -18,10 +18,4 @@ public class Task30 {
                 .map(i -> a[a.length - i -1 ])
                 .toArray();
     }
-    /*
-    .map(i -> {
-                    int i1 = a[a.length - i - 1];
-                    return i1; // to array i
-                })
-     */
 }

@@ -19,7 +19,7 @@ public class Task40 {
         List<Integer> sticks = Arrays.stream(arr).boxed().collect(Collectors.toList());
         List<Integer> sticksCutCount = new ArrayList<>();
 
-        while(sticks.size() > 0) {
+        while(!sticks.isEmpty()) {
             sticksCutCount.add(sticks.size());
             int shortestStick = getShortestStick(sticks);
             sticks = cutSticks(sticks, shortestStick);

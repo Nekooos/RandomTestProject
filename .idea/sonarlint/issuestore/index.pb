@@ -145,3 +145,15 @@ T
 $src/test/java/hackerrank/Task44.java,c\2\c238a44c2de1bcc8d686acec928533e0ea8c211c
 T
 $src/test/java/hackerrank/Task45.java,a\7\a70ba557112d06de6a78b8bbb7a68329a4ea2cdf
+T
+$src/test/java/hackerrank/Task46.java,6\b\6b0949cf031e972e9246ca9030e3edf3dd4ac305
+T
+$src/main/java/concurrency/Delay.java,9\7\9712f8b58515a57d48ac809cce52b5377f43faed
+T
+$src/test/java/hackerrank/Task47.java,f\9\f971087ca3cf81d9f4e2b9ca21772f3894f36699
+[
++src/test/java/generic/BasicGenericTest.java,e\6\e65d0c718e90a7a5214f7212248a2f33d8bd3fe3
+S
+#src/main/java/generic/KeyValue.java,7\f\7febf1fee2d614d804bb8f4a803d86b2e5659522
+W
+'src/main/java/generic/BasicGeneric.java,5\d\5d96d625dc3e3efa514385eda8a2b7f4e0fc38f6

@@ -16,9 +16,9 @@ public class Task44 {
         int totalWrappers = totalChoc;
         int chocFromWrapper;
         while (m <= totalWrappers) {
-            int wrapperTogive = totalWrappers - (totalWrappers % m);
+            int wrapperToGive = totalWrappers - (totalWrappers % m);
             chocFromWrapper = totalWrappers / m;
-            totalWrappers = (totalWrappers - wrapperTogive) + chocFromWrapper;
+            totalWrappers = (totalWrappers - wrapperToGive) + chocFromWrapper;
             totalChoc = totalChoc + chocFromWrapper;
         }
         return totalChoc;

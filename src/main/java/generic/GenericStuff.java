@@ -1,13 +1,20 @@
 package generic;
 
-public class GenericStuff<T extends Number> {
-    /*
-        E - Element (used extensively by the Java Collections Framework)
-        K - Key
-        N - Number
-        T - Type
-        V - Value
-        S,U,V etc. - 2nd, 3rd, 4th types
-    */
+import java.util.Date;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
+public class GenericStuff {
+    public <A> A timed(String description, Supplier<A> code) {
+        Consumer<String> defaultOutPut = System.out::println;
+        return timed(description, defaultOutPut, code);
+    }
+
+    public <A> A timed(String description, Consumer<String> output, Supplier<A> code) {
+        final Date before = new Date();
+        A result = code.get();
+        final long duration = new Date().getTime() - before.getTime();
+        output.accept(description + "took" + duration + " milliseconds");
+        return result;
+    }
 }
