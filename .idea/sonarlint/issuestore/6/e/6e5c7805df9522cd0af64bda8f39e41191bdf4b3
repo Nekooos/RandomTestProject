@@ -1,9 +1,0 @@
-
-=squid:S1172
-"&Remove these unused method parameters.(Éº×
-Psquid:S3400"9Remove this method and declare a constant for this value.(”·³›
-Bsquid:S1172"&Remove these unused method parameters.(Ï÷÷¬şÿÿÿÿ
-=squid:S1172"&Remove these unused method parameters.(¦¶Â
-O
-squid:S106"9Replace this use of System.out or System.err by a logger.(£°€¾
-Psquid:S3400"9Remove this method and declare a constant for this value.(”·³›
