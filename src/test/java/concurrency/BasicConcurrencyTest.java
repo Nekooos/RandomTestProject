@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeoutException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BasicConcurrencyTest {
     BasicConcurrency basicConcurrency;
@@ -42,5 +42,49 @@ public class BasicConcurrencyTest {
 
         Thread runnableThread = new Thread(new TestRunnable());
         runnableThread.start();
+    }
+
+    @Test
+    public void testRunnable2() {
+        TestRunnable2 testRunnable2 = new TestRunnable2();
+        testRunnable2.loopRunnable();
+    }
+
+    @Test
+    public void testRunnable2ExecutorsService() {
+        TestRunnable2 testRunnable2 = new TestRunnable2();
+        testRunnable2.loopRunnableExecutorsService();
+
+        testRunnable2.loopRunnableFixedThreadPool();
+    }
+
+    @Test
+    public void testRunnable2FixedThreadPool() {
+        TestRunnable2 testRunnable2 = new TestRunnable2();
+        testRunnable2.loopRunnableFixedThreadPool();
+    }
+
+    @Test
+    public void testcallablel() throws ExecutionException, InterruptedException, TimeoutException {
+        TestCallable testCallable = new TestCallable();
+        testCallable.loopCallable(200);
+    }
+
+    @Test
+    public void testcallablelTimeout() {
+        TestCallable testCallable = new TestCallable();
+        Exception exception = assertThrows(TimeoutException.class, () -> {
+            testCallable.loopCallable(400);
+        });
+        assertEquals("java.util.concurrent.TimeoutException", exception.toString());
+    }
+
+    @Test
+    public void testCallableThrowsException() {
+        TestCallable testCallable = new TestCallable();
+        Exception exception = assertThrows(ExecutionException.class, () -> {
+           testCallable.loopCallableThrowsException(200);
+        });
+        assertEquals("java.lang.IllegalStateException: I throw this exception in : pool-1-thread-1", exception.getMessage());
     }
 }

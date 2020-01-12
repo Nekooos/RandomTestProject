@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Task47 {
     @Test
     public void task47() {
-        int n = 0;
 
     }
 
