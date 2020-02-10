@@ -1,1 +1,1 @@
-#Project for testing code and Hackerrank 
+#Project for practicing  java code and Hackerrank

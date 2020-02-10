@@ -16,6 +16,9 @@ public class Task4 {
 
     @Test
     public void task4() {
+        String derp = "derp";
+        derp.isEmpty();
+
         int val1 = 0;
         for (int i = 0; i < arr.size(); i++) {
             val1 = val1 + arr.get(i).get(i);
