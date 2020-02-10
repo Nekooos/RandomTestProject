@@ -16,14 +16,21 @@ public class Task50 {
     public void task50() {
         calculateQuartiles(Arrays.asList(3, 7, 8, 5, 12, 14, 21, 13, 18))
                 .forEach(System.out::println); // 6, 12, 16
+        calculateQuartiles(Arrays.asList(3, 7, 8, 5, 12, 14, 21, 15, 18, 14))
+                .forEach(System.out::println); // 6, 12, 16
     }
 
-    private List<Double> calculateQuartiles(List<Integer> numbers) {
+    private List<Integer> calculateQuartiles(List<Integer> numbers) {
         Collections.sort(numbers);
-
-        List<Integer> lowerPart = splitList(numbers, 0, numbers.size()/2);
-        List<Integer> upperPart = splitList(numbers, numbers.size()/2+1, numbers.size());
-
+        List<Integer> lowerPart;
+        List<Integer> upperPart;
+        if(numbers.size() % 2 == 1) {
+            lowerPart = splitList(numbers, 0, numbers.size() / 2);
+            upperPart = splitList(numbers, numbers.size() / 2 + 1, numbers.size());
+        } else {
+            lowerPart = splitList(numbers, 0, numbers.size() / 2);
+            upperPart = splitList(numbers, numbers.size() / 2, numbers.size());
+        }
         return Arrays.asList(
                 calculateMedian(lowerPart),
                 calculateMedian(numbers),
@@ -37,11 +44,11 @@ public class Task50 {
                 .collect(Collectors.toList());
     }
 
-    private double calculateMedian(List<Integer> numbers) {
+    private int calculateMedian(List<Integer> numbers) {
         if(numbers.size() % 2 == 1) {
             return numbers.get(numbers.size()/2);
         } else {
-            return (double)(numbers.get(numbers.size()/2) + numbers.get(numbers.size()/2-1))/2;
+            return (numbers.get(numbers.size()/2) + numbers.get(numbers.size()/2-1))/2;
         }
     }
 }
