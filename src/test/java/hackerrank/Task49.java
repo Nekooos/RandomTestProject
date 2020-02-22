@@ -24,7 +24,6 @@ public class Task49 {
     }
 
     private int listSizeSum(List<Integer> numbers) {
-        System.out.println(numbers.stream().mapToInt(s-> s).sum());
         return numbers.stream().mapToInt(s-> s).sum();
     }
 
