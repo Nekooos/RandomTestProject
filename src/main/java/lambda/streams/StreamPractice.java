@@ -1,2 +1,5 @@
-package lambda.streams;public class StreamPractice {
+package lambda.streams;
+
+public class StreamPractice {
+
 }

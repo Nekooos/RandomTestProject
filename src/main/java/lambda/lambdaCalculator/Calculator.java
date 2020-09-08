@@ -6,8 +6,12 @@ import java.util.List;
 public interface Calculator {
     double applyNum(double x);
 
+    default Calculator defaultPlus(double y) {
+        return x -> x + y;
+    }
+
     static Calculator plus(double y) {
-        return (x) -> x+y;
+        return (x) -> x + y;
     }
 
     static Calculator minus(double y) {
