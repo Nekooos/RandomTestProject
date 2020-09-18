@@ -124,6 +124,12 @@ class LambdaClass {
         return ageConditionList;
     }
 
+    public List<User> userSortedByAgeStream(List<User> users, Predicate<User> ageCondition) {
+        return users.stream()
+                .filter(ageCondition)
+                .collect(Collectors.toList());
+    }
+
     public boolean andPredicate(User user, IntPredicate greaterThan, IntPredicate lesserThan) {
         return greaterThan.and(lesserThan).test(user.getAge());
     }

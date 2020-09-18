@@ -9,8 +9,6 @@ public interface UserPredicate  {
     boolean test(User user);
 
     default UserPredicate compare(User user1) {
-        return user -> {
-            return user.getAge() > user1.getAge();
-        };
+        return user -> user.getAge() > user1.getAge();
     }
 }

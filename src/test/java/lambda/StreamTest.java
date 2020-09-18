@@ -1,5 +1,6 @@
 package lambda;
 
+import collection.HashMapPractice;
 import models.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -189,5 +190,23 @@ class StreamTest {
                 .limit(2)
                 .collect(Collectors.toList());
         assertEquals(2, usersResult.size());
+    }
+
+    @Test
+    void convertListToMapTest() {
+        User user1 = new User("Ulf", 44);
+        User user2 = new User("Anna", 33);
+        User user3 = new User("Alf", 22);
+        List<User> users = Arrays.asList(user1, user2, user3);
+
+        HashMapPractice hashMapPractice = new HashMapPractice();
+
+        Map<String, User> userMap = new HashMap<>();
+        userMap.put(user1.getName(), user1);
+        userMap.put(user2.getName(), user2);
+        userMap.put(user3.getName(), user3);
+
+        Map<String, User> result = hashMapPractice.convertListToMap(users);
+        assertEquals(result, userMap);
     }
 }
